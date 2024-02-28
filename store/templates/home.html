@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+</head>
+<body>
+    <p> Total_Products: {{total_products}} </p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Unit_price</th>
+            <th>Inventory</th>
+            <th>Discount_price</th>
+            <th> collection</th>
+        </tr>
+
+        {% for product in products %}
+
+        <tr>
+            <td> {{ product.name }}</td>
+            <td> {{ product.unit_price }}</td>
+            <td> {{ product.inventory}}</td>
+            <td> {{ product.discount_price | floatformat:2 }}</td>
+            <td> {{ product.collection}}</td>
+
+        </tr> 
+        {% endfor %}
+        
+    </table>
+
+
+    {% for product in products %}
+    <p>{{ product }}</p>
+    {% endfor %}
+
+</body>
+</html>
